@@ -20,14 +20,10 @@ app.config(function ($routeProvider, $locationProvider) {
 		});
 });
 
-app.controller('TabController', function ($scope) {
-	$scope.toggleClass = function(e) {
-		document.querySelector(".active").setAttribute("class", "control-item");
-		document.querySelector("a[href='" + e + "']").setAttribute("class", "control-item active");
-	}
-});
-
 app.controller('List1Controller', function ($scope) {
+	document.querySelector(".active").setAttribute("class", "control-item");
+	document.querySelector("a[href='#/List-1']").setAttribute("class", "control-item active");
+
 	if (localStorage.getItem("angular-list-1")) {
 		this.items = JSON.parse(localStorage.getItem("angular-list-1"));
 	} else {
@@ -74,6 +70,9 @@ app.controller('List1Controller', function ($scope) {
 });
 
 app.controller('List2Controller', function () {
+	document.querySelector(".active").setAttribute("class", "control-item");
+	document.querySelector("a[href='#/List-2']").setAttribute("class", "control-item active");
+	
 	if (localStorage.getItem("angular-list-2")) {
 		this.items = JSON.parse(localStorage.getItem("angular-list-2"));
 	} else {
@@ -112,6 +111,9 @@ app.controller('List2Controller', function () {
 });
 
 app.controller('List3Controller', function () {
+	document.querySelector(".active").setAttribute("class", "control-item");
+	document.querySelector("a[href='#/List-3']").setAttribute("class", "control-item active");
+	
 	if (localStorage.getItem("angular-list-3")) {
 		this.items = JSON.parse(localStorage.getItem("angular-list-3"));
 	} else {
