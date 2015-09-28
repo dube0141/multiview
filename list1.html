@@ -1,0 +1,15 @@
+<div ng-controller="List1Controller as list1">
+	<form name="newItemForm" ng-submit="newItemForm.$valid && list1.addItem(list1.input)" class="table-view-cell" novalidate ng-model="item.new">
+		<input type="text" placeholder="Add Item" ng-minlength="3" ng-model="list1.input" required>
+		<button class="btn btn-positive">ADD</button>
+	</form>
+
+	<div class="card">
+		<ul class="table-view">
+			<li class="table-view-cell" ng-repeat="item in list1.items track by $index">
+				<a ng-click="list1.toggle($index)">{{ item.task }} <span class="media-object pull-left icon {{ item.status }}"></span></a>
+				<button ng-click="list1.removeItem($index)" class="btn btn-negative">Remove</button>
+			</li>
+		</ul>
+	</div>
+</div>
